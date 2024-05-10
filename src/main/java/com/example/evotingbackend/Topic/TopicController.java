@@ -1,9 +1,9 @@
-package com.example.evotingbackend.Topic;
+package com.example.evotingbackend.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
+// import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping(value = "/topics")
+@RequestMapping("/api/v1/auth/topics")
 public class TopicController {
 
 	@Autowired
 	private TopicService topicService;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = {"","/"} , produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> getTopics() {
 		return topicService.getTopics();
 	}
@@ -31,7 +30,7 @@ public class TopicController {
 	@RequestMapping(method = RequestMethod.POST, value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> addTopic(@RequestBody Topic topic) {
 		return topicService.addTopic(topic);
-	}
+	} 
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> updateTopic(@PathVariable String id, @RequestBody Topic updatedTopic) {
