@@ -1,5 +1,6 @@
 package com.example.evotingbackend.auth;
 
+import com.example.evotingbackend.models.Etudiant;
 import com.example.evotingbackend.models.Role;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
+public class uSEAuthenticationResponse {
     private String token;
 
     private String firstname;

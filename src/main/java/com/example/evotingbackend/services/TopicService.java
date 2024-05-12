@@ -1,9 +1,12 @@
-package com.example.evotingbackend.topic;
+package com.example.evotingbackend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import com.example.evotingbackend.models.Topic;
+import com.example.evotingbackend.repository.TopicRepository;
 
 @Service
 public class TopicService {
